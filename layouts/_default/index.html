@@ -11,6 +11,13 @@
         {{.Content}}
       </div>
       <div>
+        Result from printf:<br><br>
+        {{ printf "%#v" .Site.Menus.main }}
+        {{ range .Site.Menus.main }}
+            <br>{{ printf "%#v" . }}
+        {{ end }}
+      </div>
+      <div>
         {{ range first 10 .Site.RegularPages }}
             {{ .Render "summary"}}
         {{ end }}
